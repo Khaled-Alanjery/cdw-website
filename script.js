@@ -1,17 +1,19 @@
 // ---- Front-camera flicker-wave effect ----
-// Click the demo button -> front camera turns on -> the screen fills with
-// horizontal stripes. Stripes riding the wave show live camera video
-// (with a random flicker), the rest of the screen shows tiled text.
+// Click the button to turn on the front camera. The page displays
+// horizontal stripes of live video, and the blank areas show repeating
+// "HELLO WORLD" text over a black background.
 
 const startBtn = document.getElementById('demoButton');
 const display = document.getElementById('messageDisplay');
-
-// Change this to whatever text you want filling the gaps
 const MESSAGE = 'HELLO WORLD';
 
-let video, canvas, ctx, textCanvas, textCtx;
+let video;
+let canvas;
+let ctx;
+let textCanvas;
+let textCtx;
 let running = false;
-let mirror = true; // flip horizontally for a natural "selfie" view
+let mirror = true;
 
 async function startCameraWave() {
   if (running) return;
@@ -26,6 +28,12 @@ async function startCameraWave() {
     video.srcObject = stream;
     video.playsInline = true;
     video.muted = true;
+
+    await new Promise((resolve, reject) => {
+      video.onloadedmetadata = () => resolve();
+      video.onerror = () => reject(new Error('Video metadata load failed'));
+    });
+
     await video.play();
 
     canvas = document.createElement('canvas');
@@ -38,7 +46,6 @@ async function startCameraWave() {
 
     startBtn.style.display = 'none';
     display.textContent = '';
-
     running = true;
     requestAnimationFrame(loop);
   } catch (err) {
@@ -52,7 +59,6 @@ function resizeCanvas() {
   buildTextLayer();
 }
 
-// Pre-render the repeating text onto a black background, once per resize
 function buildTextLayer() {
   textCanvas = document.createElement('canvas');
   textCanvas.width = canvas.width;
@@ -66,11 +72,11 @@ function buildTextLayer() {
   textCtx.font = 'bold 42px Roboto, sans-serif';
   textCtx.textBaseline = 'top';
 
-  const lineHeight = 50;
+  const lineHeight = 52;
   const unit = `  ${MESSAGE}  `;
   const unitWidth = textCtx.measureText(unit).width;
-  const repeats = Math.ceil(textCanvas.width / unitWidth) + 2;
-  const fullLine = unit.repeat(repeats);
+  const repeatCount = Math.ceil(textCanvas.width / unitWidth) + 2;
+  const fullLine = unit.repeat(repeatCount);
 
   let y = 0;
   let row = 0;
@@ -78,20 +84,20 @@ function buildTextLayer() {
     const shift = (row % 2) * (unitWidth / 2);
     textCtx.fillText(fullLine, -shift, y);
     y += lineHeight;
-    row++;
+    row += 1;
   }
 }
 
-function loop(t) {
+function loop(timestamp) {
   if (!running) return;
 
-  // base layer: black + tiled text
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(textCanvas, 0, 0);
 
-  const stripeHeight = 6;   // thickness of each scan stripe
-  const waveFreq = 0.035;   // how tightly packed the wave bands are
-  const waveSpeed = 0.0015; // how fast the wave travels down the screen
-  const xJitter = 14;       // horizontal drift per stripe (adds to the "wave" feel)
+  const stripeHeight = 6;
+  const waveFreq = 0.035;
+  const waveSpeed = 0.0015;
+  const xJitter = 14;
 
   ctx.save();
   if (mirror) {
@@ -100,19 +106,24 @@ function loop(t) {
   }
 
   for (let y = 0; y < canvas.height; y += stripeHeight) {
-    const band = Math.sin(y * waveFreq + t * waveSpeed);
+    const band = Math.sin(y * waveFreq + timestamp * waveSpeed);
     if (band > 0.1) {
       const flicker = 0.35 + Math.random() * 0.65;
-      const xOffset = Math.sin(t * 0.002 + y * 0.05) * xJitter;
-
-      const srcY = (y / canvas.height) * video.videoHeight;
-      const srcH = (stripeHeight / canvas.height) * video.videoHeight;
+      const xOffset = Math.sin(timestamp * 0.002 + y * 0.05) * xJitter;
+      const srcY = Math.max(0, (y / canvas.height) * video.videoHeight);
+      const srcH = Math.min(video.videoHeight - srcY, (stripeHeight / canvas.height) * video.videoHeight);
 
       ctx.globalAlpha = flicker;
       ctx.drawImage(
         video,
-        0, srcY, video.videoWidth, srcH,
-        xOffset, y, canvas.width, stripeHeight
+        0,
+        srcY,
+        video.videoWidth,
+        srcH,
+        xOffset,
+        y,
+        canvas.width + Math.abs(xOffset),
+        stripeHeight
       );
       ctx.globalAlpha = 1;
     }
