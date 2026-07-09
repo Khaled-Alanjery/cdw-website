@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: 'Roboto', sans-serif;
+  background: #f7f7f7;
+  color: #111;
+}
+
+.sc-container,
+.canvas-block {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.section-title {
+  margin: 24px 0 8px;
+  padding: 0;
+  font-weight: 700;
+}
+
+#sc-container-1,
+#threejs-1 {
+  margin-bottom: 24px;
+}
+
+#sc-container-2,
+#threejs-2 {
+  margin-top: 24px;
+}
+
+/* Adjust these values to change spacing between the two sections */
+#sc-container-1,
+#sc-container-2,
+#threejs-1,
+#threejs-2 {
+  padding: 0 0 0 0;
+}
