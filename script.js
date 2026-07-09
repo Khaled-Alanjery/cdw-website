@@ -15,6 +15,8 @@ let textCtx;
 let running = false;
 let mirror = true;
 
+const cameraContainer = document.getElementById('camera-container');
+
 async function startCameraWave() {
   if (running) return;
 
@@ -38,7 +40,7 @@ async function startCameraWave() {
 
     canvas = document.createElement('canvas');
     canvas.id = 'waveCanvas';
-    document.body.appendChild(canvas);
+    (cameraContainer || document.body).appendChild(canvas);
     ctx = canvas.getContext('2d');
 
     resizeCanvas();
@@ -54,8 +56,14 @@ async function startCameraWave() {
 }
 
 function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  if (!canvas) return;
+  const w = (cameraContainer && cameraContainer.clientWidth) || window.innerWidth;
+  const h = (cameraContainer && cameraContainer.clientHeight) || window.innerHeight;
+  canvas.width = w;
+  canvas.height = h;
+  // ensure CSS sizing matches
+  canvas.style.width = '100%';
+  canvas.style.height = '100%';
   buildTextLayer();
 }
 
@@ -135,3 +143,21 @@ function loop(timestamp) {
 
 startBtn.textContent = 'Turn On Camera';
 startBtn.addEventListener('click', startCameraWave);
+
+// reveal the spatial canvas when it scrolls into view
+function initRevealObserver() {
+  const target = document.getElementById('sc-container');
+  if (!target) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        target.classList.add('visible');
+      } else {
+        target.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.25 });
+  obs.observe(target);
+}
+
+document.addEventListener('DOMContentLoaded', initRevealObserver);
