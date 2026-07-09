@@ -3,8 +3,8 @@
   if (!container) return;
 
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x0f1118);
-  scene.fog = new THREE.FogExp2(0x0f1118, 0.03);
+  scene.background = new THREE.Color(0xf0f7dc);
+  scene.fog = new THREE.FogExp2(0xf0f7dc, 0.025);
 
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -23,14 +23,14 @@
   controls.maxDistance = 14;
   controls.target.set(0, 0.2, 0);
 
-  const ambient = new THREE.AmbientLight(0x9ab7ff, 0.25);
+  const ambient = new THREE.AmbientLight(0xf4f7c7, 0.7);
   scene.add(ambient);
 
-  const keyLight = new THREE.DirectionalLight(0xffffff, 1.2);
+  const keyLight = new THREE.DirectionalLight(0xdce92e, 1.0);
   keyLight.position.set(4, 6, 2);
   scene.add(keyLight);
 
-  const fillLight = new THREE.PointLight(0x6bffcb, 18, 20, 2);
+  const fillLight = new THREE.PointLight(0x101100, 8, 15, 2);
   fillLight.position.set(-3, 2, -2);
   scene.add(fillLight);
 
@@ -38,26 +38,22 @@
   scene.add(group);
 
   const baseMaterial = new THREE.MeshStandardMaterial({
-    color: 0x7a8cff,
+    color: 0xb9c92c,
     roughness: 0.35,
-    metalness: 0.1,
-    emissive: 0x050816
+    metalness: 0.05,
+    emissive: 0x111200
   });
 
   const accentMaterial = new THREE.MeshStandardMaterial({
-    color: 0x6bf7c1,
-    roughness: 0.2,
-    metalness: 0.2,
-    emissive: 0x03120d
+    color: 0x080802,
+    roughness: 0.25,
+    metalness: 0.1,
+    emissive: 0x040400
   });
 
   const cube = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1.4, 1.4, 4, 4, 4), baseMaterial);
   cube.position.y = 0.2;
   group.add(cube);
-
-  const pyramid = new THREE.Mesh(new THREE.ConeGeometry(0.9, 1.7, 5), accentMaterial);
-  pyramid.position.set(0, 1.2, 0);
-  group.add(pyramid);
 
   const ring = new THREE.Mesh(new THREE.TorusGeometry(1.8, 0.05, 12, 140), accentMaterial);
   ring.rotation.x = Math.PI / 2;
@@ -66,7 +62,7 @@
 
   const floor = new THREE.Mesh(
     new THREE.CircleGeometry(6, 64),
-    new THREE.MeshStandardMaterial({ color: 0x131725, roughness: 0.9, metalness: 0.05 })
+    new THREE.MeshStandardMaterial({ color: 0xeef7d0, roughness: 0.9, metalness: 0.02 })
   );
   floor.rotation.x = -Math.PI / 2;
   floor.position.y = -1.4;
@@ -80,7 +76,7 @@
 
     group.rotation.y = t * 0.6;
     group.rotation.x = Math.sin(t * 0.8) * 0.2;
-    pyramid.rotation.y = t * 0.8;
+    ring.rotation.z = t * 0.5;
     cube.scale.setScalar(1 + Math.sin(t * 1.7) * 0.06);
 
     controls.update();
