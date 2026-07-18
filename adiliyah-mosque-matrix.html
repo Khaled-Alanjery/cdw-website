@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Jami' al-'Adiliyya — Matrix / Ontology / Dashboard</title>
+<title>Jami' al-'Adiliyya - Matrix / Ontology / Dashboard</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <style>
   :root{
@@ -91,22 +91,22 @@
 <div id="app">
   <header>
     <div>
-      <h1>Jami' al-'Adiliyya — Procedural Model, Ontology Graph &amp; Live Dashboard</h1>
+      <h1>Jami' al-'Adiliyya - Procedural Model, Ontology Graph &amp; Live Dashboard</h1>
     </div>
     <div id="timeline-wrap">
       <div id="timeline-track-wrap">
         <input type="range" id="timeline" min="0" max="1" value="0" step="1">
         <div id="timeline-ticks"></div>
       </div>
-      <span id="timeline-date">—</span>
+      <span id="timeline-date">-</span>
       <button id="reset-btn">Reset selection</button>
     </div>
   </header>
-  <div id="timeline-hint">Drag to scrub day-by-day through the real 2010–2023 station record. Labeled ticks are documented events — click one, or any node/row elsewhere on the page, to jump straight to it.</div>
+  <div id="timeline-hint">Drag to scrub day-by-day through the real 2010–2023 station record. Labeled ticks are documented events - click one, or any node/row elsewhere on the page, to jump straight to it.</div>
 
   <div id="main">
     <div class="pane" id="pane-3d">
-      <div class="pane-head"><span>Procedural Model (grayscale) — click a zone</span><span id="model-selected">none selected</span></div>
+      <div class="pane-head"><span>Procedural Model (grayscale) - click a zone</span><span id="model-selected">none selected</span></div>
       <div class="pane-body" id="model-body"></div>
       <div id="model-legend"></div>
       <div id="model-hint">Drag to orbit · scroll to zoom · click a building part to select it. Minaret plan position is triangulated (see footer); its height (41m) and all dome/column/fountain geometry are measured from the CAD file or the damage report.</div>
@@ -114,7 +114,7 @@
     <div id="right-col">
       <div class="pane" id="pane-graph">
         <div class="pane-head">
-          <span id="graph-view-label">Ontology — Force-Directed Graph (populates with timeline)</span>
+          <span id="graph-view-label">Ontology - Force-Directed Graph (populates with timeline)</span>
           <span><button id="view-toggle-btn" class="zone-btn">Show intensity sphere ↦</button><span id="graph-count"></span></span>
         </div>
         <div class="pane-body">
@@ -124,8 +124,8 @@
         </div>
       </div>
       <div class="pane" id="pane-info">
-        <div class="pane-head"><span>Selected Node — Full Record</span></div>
-        <div class="pane-body"><div id="info-empty">Click a node in the graph above, or a building part in the model, to see everything on record for it — history and source.</div></div>
+        <div class="pane-head"><span>Selected Node - Full Record</span></div>
+        <div class="pane-body"><div id="info-empty">Click a node in the graph above, or a building part in the model, to see everything on record for it - history and source.</div></div>
       </div>
       <div class="pane" id="pane-dash">
         <div class="pane-head"><span>Dashboard</span><span id="dash-date"></span></div>
@@ -140,7 +140,7 @@
             <div id="damage-panel"></div>
           </div>
           <div>
-            <div class="dash-col-title">Conflict Information — City of Aleppo</div>
+            <div class="dash-col-title">Conflict Information - City of Aleppo</div>
             <div id="conflict-panel"></div>
           </div>
         </div>
@@ -1134,7 +1134,7 @@ const temperatureFallback = [
 const conflictFallback = [
 {date:"2012-07-19",precision:"day",name:"Battle of Aleppo begins",detail:"Gunfire breaks out between rebels and security forces in Salaheddine district, southwest Aleppo; three days later rebel fighters converge on and penetrate the city.",source_note:"Wikipedia: Battle of Aleppo (2012-2016)"},
 {date:"2012-11-26",precision:"day",name:"Rebels capture Tishrin Dam",detail:"Rebels seize Tishrin Dam northeast of the city, cutting off nearly all remaining government supply routes into Aleppo.",source_note:"Wikipedia: Battle of Aleppo (2012-2016)"},
-{date:"2013-02",precision:"month",name:"Great Mosque of Aleppo (Umayyad Mosque) seized",detail:"Rebels seize the Umayyad Mosque; during the fighting the mosque's museum catches fire and its ceiling collapses — another historic Aleppo mosque damaged in the same conflict.",source_note:"Wikipedia: Battle of Aleppo (2012-2016)"},
+{date:"2013-02",precision:"month",name:"Great Mosque of Aleppo (Umayyad Mosque) seized",detail:"Rebels seize the Umayyad Mosque; during the fighting the mosque's museum catches fire and its ceiling collapses - another historic Aleppo mosque damaged in the same conflict.",source_note:"Wikipedia: Battle of Aleppo (2012-2016)"},
 {date:"2014-04-27",precision:"day",name:"Old City / al-Hatab Square operation",detail:"FSA and Ahrar ash-Sham launch an operation in the Old City and al-Hatab Square (Al-Jdayde district) using tunnel bombs; churches, a mosque, and the Waqf of Ibshir Mustafa Pasha complex are heavily damaged.",source_note:"Wikipedia: Battle of Aleppo (2012-2016)"},
 {date:"2014-05-22",precision:"day",name:"Siege of Aleppo Central Prison lifted",detail:"Government forces lift the siege of Aleppo Central Prison after a two-year rebel encirclement.",source_note:"Wikipedia: Battle of Aleppo (2012-2016)"},
 {date:"2015-06-15",precision:"day",name:"Rebel shelling of government-held Aleppo",detail:"Rebel shelling of government-held districts leaves 43 civilians dead and 190 wounded ahead of a new rebel offensive.",source_note:"Wikipedia: Battle of Aleppo (2012-2016)"},
@@ -1145,7 +1145,7 @@ const conflictFallback = [
 {date:"2016-12-22",precision:"day",name:"Evacuation completed; Battle of Aleppo ends",detail:"Evacuation of remaining civilians and rebels is completed; the Syrian Army declares full control of the city. Over the 4.5-year battle, the Violations Documentation Center recorded at least 31,273 deaths (19 Jul 2012–15 Dec 2016), 76% of them civilians.",source_note:"Wikipedia: Battle of Aleppo (2012-2016)"},
 {date:"2020-02-17",precision:"day",name:"Syrian government regains full control of Aleppo suburbs",detail:"The Syrian Arab Army regains control of the last rebel-held Aleppo-city suburbs for the first time since 2012, part of the wider Idlib/Aleppo offensive.",source_note:"Wikipedia: Battle of Aleppo (2012-2016)"},
 {date:"2024-11-27",precision:"day",name:"HTS-led offensive into Aleppo governorate begins",detail:"Syrian opposition forces, led by Hay'at Tahrir al-Sham, launch a major offensive into western and southern Aleppo governorate.",source_note:"Wikipedia: Northwestern Syria offensive (2024) / Battle of Aleppo (2024)"},
-{date:"2024-11-29",precision:"day",name:"Rebel forces enter Aleppo city",detail:"Opposition forces enter Aleppo city, the first rebel presence in Aleppo since the end of the 2012–2016 battle — part of the offensive that would go on to topple the Assad government weeks later.",source_note:"Wikipedia: Battle of Aleppo (2024)"}
+{date:"2024-11-29",precision:"day",name:"Rebel forces enter Aleppo city",detail:"Opposition forces enter Aleppo city, the first rebel presence in Aleppo since the end of the 2012–2016 battle - part of the offensive that would go on to topple the Assad government weeks later.",source_note:"Wikipedia: Battle of Aleppo (2024)"}
 ];
 const CONFLICT_WIKI_URL = "https://en.wikipedia.org/wiki/Battle_of_Aleppo_(2012%E2%80%932016)";
 const CONFLICT_2024_WIKI_URL = "https://en.wikipedia.org/wiki/Battle_of_Aleppo_(2024)";
@@ -1183,14 +1183,14 @@ Promise.all([
   conflictEvents.sort((a,b)=>a._date-b._date);
 
   document.getElementById("footer-note").innerHTML =
-    "<strong>Data sources</strong> — Mosque &amp; damage: Rapid Damage Assessment (25.06.2019, Museum for Islamic Art Berlin / Syrian Heritage Archive Project, RC3) · CAD survey FLS1615 (DXF, layers WALL/PLAN/DOME/COLUMN/FOUNTAIN) · Wikipedia: Al-Adiliyah Mosque. " +
-    "Environment: NOAA GHCN Daily Summaries, station SYE00147760 (Aleppo) — " + temperature.length + " real daily readings, " + (temperature.length?d3.timeFormat('%Y')(temperature[0].date):'') + "–" + (temperature.length?d3.timeFormat('%Y')(temperature[temperature.length-1].date):'') + ", including the real ~7-year station gap 14 Nov 2012–20 Nov 2019 · Open-Elevation API + OpenTopoData API (SRTM90m/ASTER30m) — 8 readings · sunrisesunset.io API (25 Jun 2019 solar calc.) · NASA Earth Observatory VIIRS Day/Night Band (city-scale, published 16 May 2017). " +
-    "Conflict: <a class=\"wiki-link\" href=\"" + CONFLICT_WIKI_URL + "\" target=\"_blank\" rel=\"noopener\">Wikipedia — Battle of Aleppo (2012–2016)</a> and <a class=\"wiki-link\" href=\"" + CONFLICT_2024_WIKI_URL + "\" target=\"_blank\" rel=\"noopener\">Battle of Aleppo (2024)</a>, casualty figures via the Violations Documentation Center in Syria. " +
-    "<strong>Disclosed interpretive choices</strong> (not sourced measurements): minaret plan position is triangulated from the DXF elevation-view height profile plus the nearest real wall corner; wall extrusion height (10m) and portico height (6.5m) are defaults for 3D visualization; the timeline's stop-index scale, node-appearance dates in the ontology graph, and the Intensity Sphere's point positions (a 2D disc standing in for a sphere) are visualization choices — the underlying figures behind them (event counts, station-reading recency, real % structural loss) are not. " +
-    "This page makes no live API calls at runtime — it is a static local file, and NOAA/NASA/Open-Elevation do not expose browser CORS for arbitrary local origins. Every number shown was fetched once during research and is stored here as-is.";
+    "<strong>Data sources</strong> - Mosque &amp; damage: Rapid Damage Assessment (25.06.2019, Museum for Islamic Art Berlin / Syrian Heritage Archive Project, RC3) · CAD survey FLS1615 (DXF, layers WALL/PLAN/DOME/COLUMN/FOUNTAIN) · Wikipedia: Al-Adiliyah Mosque. " +
+    "Environment: NOAA GHCN Daily Summaries, station SYE00147760 (Aleppo) - " + temperature.length + " real daily readings, " + (temperature.length?d3.timeFormat('%Y')(temperature[0].date):'') + "–" + (temperature.length?d3.timeFormat('%Y')(temperature[temperature.length-1].date):'') + ", including the real ~7-year station gap 14 Nov 2012–20 Nov 2019 · Open-Elevation API + OpenTopoData API (SRTM90m/ASTER30m) - 8 readings · sunrisesunset.io API (25 Jun 2019 solar calc.) · NASA Earth Observatory VIIRS Day/Night Band (city-scale, published 16 May 2017). " +
+    "Conflict: <a class=\"wiki-link\" href=\"" + CONFLICT_WIKI_URL + "\" target=\"_blank\" rel=\"noopener\">Wikipedia - Battle of Aleppo (2012–2016)</a> and <a class=\"wiki-link\" href=\"" + CONFLICT_2024_WIKI_URL + "\" target=\"_blank\" rel=\"noopener\">Battle of Aleppo (2024)</a>, casualty figures via the Violations Documentation Center in Syria. " +
+    "<strong>Disclosed interpretive choices</strong> (not sourced measurements): minaret plan position is triangulated from the DXF elevation-view height profile plus the nearest real wall corner; wall extrusion height (10m) and portico height (6.5m) are defaults for 3D visualization; the timeline's stop-index scale, node-appearance dates in the ontology graph, and the Intensity Sphere's point positions (a 2D disc standing in for a sphere) are visualization choices - the underlying figures behind them (event counts, station-reading recency, real % structural loss) are not. " +
+    "This page makes no live API calls at runtime - it is a static local file, and NOAA/NASA/Open-Elevation do not expose browser CORS for arbitrary local origins. Every number shown was fetched once during research and is stored here as-is.";
 
   if (!geometry){
-    document.getElementById("model-body").innerHTML = "<div style='padding:20px;font-size:12px;color:#888;'>geometry.json not found — open this file via a local server (as the assignment's Running-a-Local-Server step describes) so it can load the CAD-derived geometry.</div>";
+    document.getElementById("model-body").innerHTML = "<div style='padding:20px;font-size:12px;color:#888;'>geometry.json not found - open this file via a local server (as the assignment's Running-a-Local-Server step describes) so it can load the CAD-derived geometry.</div>";
   } else {
     initThree(geometry);
   }
@@ -1465,7 +1465,7 @@ function buildOntology(){
   });
   add("Report","report","Rapid Damage Assessment (RC3)", dateReport, {
     hist:["Issued "+(reportEvent?reportEvent.date:"2019-06-25")+" as Rapid Condition Assessment 3 (RC3)."],
-    source: reportEvent && reportEvent.credit ? reportEvent.credit+" — "+reportEvent.source_note : "Museum for Islamic Art Berlin / Syrian Heritage Archive Project"
+    source: reportEvent && reportEvent.credit ? reportEvent.credit+" - "+reportEvent.source_note : "Museum for Islamic Art Berlin / Syrian Heritage Archive Project"
   });
   links.push({source:"Building",target:"Report",rel:"assessedBy"});
 
@@ -1497,7 +1497,7 @@ function buildOntology(){
     }
   });
 
-  add("Source:Wikipedia (Battle of Aleppo)","source","Wikipedia — Battle of Aleppo", conflictEvents.length?conflictEvents[0]._date:new Date(2012,6,19), {wiki:CONFLICT_WIKI_URL});
+  add("Source:Wikipedia (Battle of Aleppo)","source","Wikipedia - Battle of Aleppo", conflictEvents.length?conflictEvents[0]._date:new Date(2012,6,19), {wiki:CONFLICT_WIKI_URL});
   conflictEvents.forEach((c,i)=>{
     const cid = "Conflict:"+i;
     add(cid, "conflict", c.name, c._date, {conflict:c});
@@ -1586,7 +1586,7 @@ function initGraph(){
     return d3.drag().on("start",started).on("drag",dragged).on("end",ended);
   }
 
-  document.getElementById("graph-count").textContent = nodes.length + " nodes / " + links.length + " edges (total — populates as timeline advances)";
+  document.getElementById("graph-count").textContent = nodes.length + " nodes / " + links.length + " edges (total - populates as timeline advances)";
   updateGraphTimeline(graphDate);
   document.getElementById("view-toggle-btn").addEventListener("click", toggleGraphView);
 }
@@ -1612,9 +1612,9 @@ function updateGraphSelection(){
 
 // ============================ INTENSITY SPHERE ============================
 // A second view of the same pane: ONE merged point cloud ("sphere") representing
-// three real intensities at once — conflict (green), environmental (purple),
+// three real intensities at once - conflict (green), environmental (purple),
 // damage (yellow). Each point is drawn from whichever aggregate it belongs to,
-// chosen in proportion to that aggregate's real, data-derived intensity share —
+// chosen in proportion to that aggregate's real, data-derived intensity share -
 // so the sphere's overall colour is dominated by whichever intensity is
 // currently highest, and total point density scales with combined intensity.
 // This is the one deliberate departure from grayscale, per explicit instruction.
@@ -1631,9 +1631,9 @@ function initIntensitySphere(){
   cloudInited = true;
 
   document.getElementById("cloud-legend").innerHTML = `
-    <div><span class="sw g"></span><strong>Conflict</strong> <span id="ci-conflict">0%</span> — share of documented Battle-of-Aleppo events reached by the timeline. Source: Wikipedia.</div>
-    <div><span class="sw p"></span><strong>Environmental</strong> <span id="ci-environmental">0%</span> — how close the timeline date sits to a real NOAA station reading (dense 2010–2023, sparse in the real 2012–2019 gap). Source: NOAA GHCN.</div>
-    <div><span class="sw y"></span><strong>Damage</strong> <span id="ci-damage">0%</span> — cumulative real % structural loss (Rapid Damage Assessment) across zones damaged by the current date.</div>
+    <div><span class="sw g"></span><strong>Conflict</strong> <span id="ci-conflict">0%</span> - share of documented Battle-of-Aleppo events reached by the timeline. Source: Wikipedia.</div>
+    <div><span class="sw p"></span><strong>Environmental</strong> <span id="ci-environmental">0%</span> - how close the timeline date sits to a real NOAA station reading (dense 2010–2023, sparse in the real 2012–2019 gap). Source: NOAA GHCN.</div>
+    <div><span class="sw y"></span><strong>Damage</strong> <span id="ci-damage">0%</span> - cumulative real % structural loss (Rapid Damage Assessment) across zones damaged by the current date.</div>
     <div style="margin-top:4px;">One sphere, one merged cloud: each point's colour is chosen in proportion to its aggregate's real intensity share, so the dominant colour shifts as the timeline moves. Total density scales with combined intensity. Conflict deaths (~31,000) are a fixed historical total and do not change with the slider.</div>
   `;
 }
@@ -1703,8 +1703,8 @@ function toggleGraphView(){
   document.getElementById("cloud-svg").style.display = showingGraph ? "block" : "none";
   document.getElementById("cloud-legend").style.display = showingGraph ? "block" : "none";
   document.getElementById("graph-view-label").textContent = showingGraph
-    ? "Intensity Sphere — environment / conflict / damage, blended"
-    : "Ontology — Force-Directed Graph (populates with timeline)";
+    ? "Intensity Sphere - environment / conflict / damage, blended"
+    : "Ontology - Force-Directed Graph (populates with timeline)";
   document.getElementById("view-toggle-btn").textContent = showingGraph ? "↤ Show ontology graph" : "Show intensity sphere ↦";
   if (showingGraph) updateIntensitySphere();
 }
@@ -1713,7 +1713,7 @@ function toggleGraphView(){
 function showNodeInfo(id){
   const wrap = document.querySelector("#pane-info .pane-body");
   if (!id){
-    wrap.innerHTML = '<div id="info-empty">Click a node in the graph above, or a building part in the model, to see everything on record for it — history and source.</div>';
+    wrap.innerHTML = '<div id="info-empty">Click a node in the graph above, or a building part in the model, to see everything on record for it - history and source.</div>';
     return;
   }
   const d = graphNodes.find(n=>n.id===id);
@@ -1730,15 +1730,15 @@ function showNodeInfo(id){
       meta = "Zone · " + z.building_part;
       hist += row("Condition / Urgency class", z.cc_class + " / " + z.uc_class);
       hist += row("Overall loss (report figure)", z.overall_loss_pct + "%");
-      hist += row("Cause", z.cause || "—");
+      hist += row("Cause", z.cause || "-");
       hist += row("Response deadline", z.response_deadline + (z.response_window_days ? " (" + z.response_window_days + " days from report)" : ""));
       hist += `<div class="dash-note">${z.scope_detail}</div>`;
     } else {
-      hist = `<div class="dash-empty">Report's brief summary mentions this element as damaged but provides no detailed CC/UC assessment for it — nothing further to show without inventing figures.</div>`;
+      hist = `<div class="dash-empty">Report's brief summary mentions this element as damaged but provides no detailed CC/UC assessment for it - nothing further to show without inventing figures.</div>`;
     }
     const docs = events.filter(e => zoneKeyFromName(e.name) === d.label);
     if (docs.length){
-      hist += `<div id="info-hist"><strong>Documented by:</strong><ul>` + docs.map(e=>`<li>${e.date} — ${e.name}${e.credit? " ("+e.credit+")":""}</li>`).join("") + `</ul></div>`;
+      hist += `<div id="info-hist"><strong>Documented by:</strong><ul>` + docs.map(e=>`<li>${e.date} - ${e.name}${e.credit? " ("+e.credit+")":""}</li>`).join("") + `</ul></div>`;
     }
     source = "Rapid Damage Assessment, 25 June 2019 (Museum for Islamic Art Berlin / Syrian Heritage Archive Project)" + (docs.length ? " · plus photo credits listed above" : "");
   } else if (d.type === "building" || d.type === "report"){
@@ -1748,20 +1748,20 @@ function showNodeInfo(id){
   } else if (d.type === "source"){
     meta = "Photographer / agency / data source";
     const credited = d.extra.creditedFor || [];
-    hist = credited.length ? `<div id="info-hist"><strong>Credited for:</strong><ul>` + credited.map(e=>`<li>${e.date} — ${e.name}</li>`).join("") + `</ul></div>` : `<div class="dash-empty">Referenced as the data source for an environmental layer.</div>`;
+    hist = credited.length ? `<div id="info-hist"><strong>Credited for:</strong><ul>` + credited.map(e=>`<li>${e.date} - ${e.name}</li>`).join("") + `</ul></div>` : `<div class="dash-empty">Referenced as the data source for an environmental layer.</div>`;
     source = credited.length ? "Rapid Damage Assessment photo credits" : "";
   } else if (d.type === "env"){
-    meta = "Environmental factor (real, pre-fetched — not a live call)";
+    meta = "Environmental factor (real, pre-fetched - not a live call)";
     if (id === "Env:Temperature"){
       if (temperature.length){
         hist += row("Record span", d3.timeFormat("%d %b %Y")(temperature[0].date) + " – " + d3.timeFormat("%d %b %Y")(temperature[temperature.length-1].date));
         hist += row("Readings", temperature.length + " days with data");
       }
-      hist += `<div class="dash-note">Station SYE00147760 (Aleppo). Real gap in the record: 14 Nov 2012 → 20 Nov 2019 — shown as an actual gap, not interpolated.</div>`;
+      hist += `<div class="dash-note">Station SYE00147760 (Aleppo). Real gap in the record: 14 Nov 2012 → 20 Nov 2019 - shown as an actual gap, not interpolated.</div>`;
       source = "NOAA GHCN Daily Summaries API";
     } else if (id === "Env:Elevation"){
       elevationPoints.forEach(p=>{ hist += row(p.label + " (" + p.dataset + ")", p.elevation_m + " m"); });
-      source = "Open-Elevation / OpenTopoData (SRTM90m, ASTER30m) / sunrisesunset.io — 4 independent readings at site center; 4 more from a real micro-grid ~110–140 m around the site";
+      source = "Open-Elevation / OpenTopoData (SRTM90m, ASTER30m) / sunrisesunset.io - 4 independent readings at site center; 4 more from a real micro-grid ~110–140 m around the site";
     } else if (id === "Env:Daylight"){
       const df = factors ? factors.daylight : null;
       if (df){
@@ -1777,7 +1777,7 @@ function showNodeInfo(id){
       if (lp){
         hist += `<div class="dash-note">${lp.finding}</div>`;
         hist += row("Scope", lp.scope);
-        hist += row("Published", lp.published || "—");
+        hist += row("Published", lp.published || "-");
         source = lp.credit || "NASA Earth Observatory";
       } else {
         source = "NASA Earth Observatory";
@@ -1849,7 +1849,7 @@ function updateDashboard(){
   envHtml += `<div class="dash-col-title" style="border:none;margin:0 0 2px;padding:0;font-size:10px;">Time-varying (changes with the timeline)</div>`;
   if (tRead){
     envHtml += row("Nearest real temp. reading", d3.timeFormat("%d %b %Y")(tRead.date));
-    envHtml += row("TMAX / TAVG / TMIN", `${tRead.tmax??"—"}° / ${tRead.tavg??"—"}° / ${tRead.tmin??"—"}°C`);
+    envHtml += row("TMAX / TAVG / TMIN", `${tRead.tmax??"-"}° / ${tRead.tavg??"-"}° / ${tRead.tmin??"-"}°C`);
   } else if (earliestT && currentDate < earliestT){
     envHtml += `<div class="dash-empty">Before the real station record begins (earliest reading: ${d3.timeFormat("%d %b %Y")(earliestT)}). No data is shown rather than estimated.</div>`;
   } else if (currentDate >= gapStart && currentDate < gapEnd){
@@ -1867,7 +1867,7 @@ function updateDashboard(){
     envHtml += row("Elevation (" + elevationPoints.length + " readings)", ext[0] + "–" + ext[1] + " m");
   }
   if (lp) envHtml += `<div class="dash-note">${lp.finding}</div>`;
-  envHtml += `<div class="dash-note">All figures above were fetched once from live APIs during research and stored statically — this page makes no live API calls at runtime (static local file; most of these endpoints don't expose browser CORS for arbitrary local origins anyway). Click the matching node in the graph for full detail.</div>`;
+  envHtml += `<div class="dash-note">All figures above were fetched once from live APIs during research and stored statically - this page makes no live API calls at runtime (static local file; most of these endpoints don't expose browser CORS for arbitrary local origins anyway). Click the matching node in the graph for full detail.</div>`;
   envEl.innerHTML = envHtml;
 
   // ---- Damage panel ----
@@ -1876,7 +1876,7 @@ function updateDashboard(){
   const zoneLabelMap = {minaret:"Minaret", dome:"Central dome", portico:"Portico"};
   const reportDate = new Date(2019,5,25);
   if (selectedZone === "fountain" || selectedZone === "courtyard"){
-    dmgEl.innerHTML = `<div class="dash-empty">Report's brief summary mentions this element as damaged (fountain roof / courtyard north wall) but provides no detailed CC/UC assessment for it — nothing further to show without inventing figures.</div>`;
+    dmgEl.innerHTML = `<div class="dash-empty">Report's brief summary mentions this element as damaged (fountain roof / courtyard north wall) but provides no detailed CC/UC assessment for it - nothing further to show without inventing figures.</div>`;
     return;
   }
   const zLabel = zoneLabelMap[selectedZone];
@@ -1888,7 +1888,7 @@ function updateDashboard(){
   }
   let html = "";
   if (currentDate < reportDate){
-    html += `<div class="dash-note">Selected date is before the report (25.06.2019) — figures below are the report's own retrospective assessment, shown for reference regardless of scrub position since damage-zone data is not a continuous time series.</div>`;
+    html += `<div class="dash-note">Selected date is before the report (25.06.2019) - figures below are the report's own retrospective assessment, shown for reference regardless of scrub position since damage-zone data is not a continuous time series.</div>`;
   }
   html += row("Condition class", z.cc_class);
   html += row("Urgency class", z.uc_class);
@@ -1923,12 +1923,12 @@ function updateConflictPanel(){
     <div class="cf-stat"><b>76%</b>of deaths were civilians</div>
     <div class="cf-stat"><b>4.4 yrs</b>Battle of Aleppo duration</div>
   </div>`;
-  html += `<div style="font-size:10.5px;margin-bottom:6px;">Source: <a class="wiki-link" href="${CONFLICT_WIKI_URL}" target="_blank" rel="noopener">Wikipedia — Battle of Aleppo (2012–2016)</a>, casualty figures per the Violations Documentation Center in Syria. 2024 events: <a class="wiki-link" href="${CONFLICT_2024_WIKI_URL}" target="_blank" rel="noopener">Battle of Aleppo (2024)</a>.</div>`;
+  html += `<div style="font-size:10.5px;margin-bottom:6px;">Source: <a class="wiki-link" href="${CONFLICT_WIKI_URL}" target="_blank" rel="noopener">Wikipedia - Battle of Aleppo (2012–2016)</a>, casualty figures per the Violations Documentation Center in Syria. 2024 events: <a class="wiki-link" href="${CONFLICT_2024_WIKI_URL}" target="_blank" rel="noopener">Battle of Aleppo (2024)</a>.</div>`;
 
   const active = conflictEvents.filter(c=>c._date <= currentDate);
   const upcoming = conflictEvents.filter(c=>c._date > currentDate);
   if (!active.length){
-    html += `<div class="dash-empty">No documented conflict event on or before this date yet — the timeline is still before the Battle of Aleppo (begins 19 Jul 2012).</div>`;
+    html += `<div class="dash-empty">No documented conflict event on or before this date yet - the timeline is still before the Battle of Aleppo (begins 19 Jul 2012).</div>`;
   } else {
     active.slice(-6).reverse().forEach(c=>{
       const isCurrent = c._date.getTime() === currentDate.getTime();
@@ -1938,10 +1938,10 @@ function updateConflictPanel(){
         ${xref ? `<div class="xref">↔ ${xref.days}d from mosque damage-photo: "${xref.event.name}" (${xref.event.date})</div>` : ""}
       </div>`;
     });
-    if (active.length > 6) html += `<div class="dash-note">${active.length-6} earlier conflict event(s) not shown — scrub further back to reveal them.</div>`;
+    if (active.length > 6) html += `<div class="dash-note">${active.length-6} earlier conflict event(s) not shown - scrub further back to reveal them.</div>`;
   }
   if (upcoming.length){
-    html += `<div class="dash-note">${upcoming.length} more documented conflict event(s) lie ahead on the timeline (next: ${upcoming[0].date} — ${upcoming[0].name}).</div>`;
+    html += `<div class="dash-note">${upcoming.length} more documented conflict event(s) lie ahead on the timeline (next: ${upcoming[0].date} - ${upcoming[0].name}).</div>`;
   }
   el.innerHTML = html;
   el.querySelectorAll(".conflict-row").forEach(rowEl=>{
@@ -1959,7 +1959,7 @@ function updateConflictPanel(){
 // `timelineStops`: every real dated thing we have (mosque events, conflict events, zone
 // response deadlines, and all 919 real NOAA daily readings). Because ~97% of those stops
 // fall inside the 2010-2023 station record, that period naturally dominates the physical
-// width of the track — exactly the "real estate" weighting asked for — while centuries
+// width of the track - exactly the "real estate" weighting asked for - while centuries
 // with nothing dated in them collapse to the handful of stops that actually exist in them.
 let timelineStops = [];
 
@@ -2012,7 +2012,7 @@ function jumpToDate(date){
 }
 
 // Simple, uncluttered tick strip: only "notable" stops (events/conflict/deadlines) are
-// candidates, and a minimum-spacing pass drops any that would collide on screen — this is
+// candidates, and a minimum-spacing pass drops any that would collide on screen - this is
 // what was breaking before (the pre-2010 era all landed within ~3% of the track and piled
 // on top of each other). Day-level scrubbing underneath is unaffected; this only changes
 // which stops get a visible label.
@@ -2057,7 +2057,7 @@ function applyTimelineStop(idx){
   if (!stop) return;
   currentDate = stop.date;
   document.getElementById("timeline-date").textContent = d3.timeFormat("%d %b %Y")(currentDate) +
-    (stop.labels.length ? " — " + stop.labels[0] : "");
+    (stop.labels.length ? " - " + stop.labels[0] : "");
   updateDashboard();
   applyTimelineToModel(currentDate);
   updateGraphTimeline(currentDate);
